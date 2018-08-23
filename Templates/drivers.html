@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="cabs">
+
+<head>
+    <meta charset="utf-8">
+    <title>Driver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <h1>Drivers</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="shortcut icon" href="https://www39.online-convert.com/">
+    <form class="myForm" method="post" action="/postDrivers/">
+        {% csrf_token %}
+        From
+        <input type="text" name="src_loc1" placeholder="Enter source location" required> To
+        <input type="text" name="des_loc1" placeholder="Enter destination" required>
+
+    <p>
+        <label>Name
+<input type="text" name="driver_name" required>
+</label>
+    </p>
+
+    <p>
+        <label>Phone
+<input type="tel" name="phone_number1">
+</label>
+    </p>
+
+    <p>
+        <label>Email
+<input type="email" name="email_address1" placeholder="Optional">
+</label>
+    </p>
+    <p>
+        <label>Number of Days
+<input type="number" name="day_number1">
+</label>
+    </p>
+    <p>
+        <label>Pick Up
+<input type="time" name="hr_number1">
+</label>
+        <label>Drop
+                   <input type="time" name="pickup">
+               </label>
+    </p>
+    <p>
+        <label>Date<input type="date" required name="ddate"></label>
+    </p>
+
+    <p>
+        <label>Car Type
+    <select id="car_type" name="car_type1">
+            <option value="c1" selected="selected">Select One</option>
+        <option value="c2">Sedan-4 Seater</option>
+        <option value="c4">Hatchback-4 Seater</option>
+        <option value="c3">SUV-6 Seater</option>
+        <option value="c2">Bolero-8 Seater</option></select>
+    </label></p>
+    <p><button type="submit">Submit</button><button><a href="{% url 'driverlist ' %}">Price List</a></button></p>
+    </form>
+</body>
+
+</html>

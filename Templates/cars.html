@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="cabs">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cars</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+ <link rel="shortcut icon" href="https://www39.online-convert.com/dl/web1/download-file/d8f14b8d-4f10-49dd-a9e6-48c6df31d91e/WhatsApp%20Image%202018-07-26%20at%207.48.46%20AM.ico">
+
+</head>
+
+<body>
+
+    <h1>Car Reservation</h1>
+<form class="myForm" method="post" action="/postReservation/">
+  {% csrf_token %}
+  From
+  <input type="text" name="src_loc" placeholder="Enter source location" required>
+  To
+  <input type="text" name="des_loc" placeholder="Enter destination" required>
+        <p>
+            <label>Name
+<input type="text" name="name" required>
+</label>
+        </p>
+
+        <p>
+            <label>Phone
+<input type="tel" name="phone">
+</label>
+        </p>
+
+        <p>
+            <label>Email
+<input type="email" name="email_address" placeholder="Optional">
+</label>
+        </p>
+        <p>      <label>       <span id="button" style="display: inline;"><a href="{% url 'carlist' %}">Price List</a></span>
+
+</label>
+        </p>
+        <p>
+            <label>Number of Cars
+<input type="number" name="car_number">
+</label>
+        </p>
+           <p>
+            <label>Number of Days
+<input type="number" name="day_number">
+</label>
+        </p>
+           <p>
+            <label>Number of Hours
+<input type="number" name="hr_number">
+</label>
+        </p>
+
+        <p>
+            <label>Car Type
+    <select id="car_type" name="car_type">
+            <option value="c1" selected="selected">Select One</option>
+        <option value="c2">Sedan-4 Seater</option>
+        <option value="c4">Hatchback-4 Seater</option>
+        <option value="c3">SUV-6 Seater</option>
+        <option value="c2">Bolero-8 Seater</option>
+
+
+
+            </select>
+    </label></p>
+
+
+
+            <p><button type="submit">Submit</button></p>
+</form>
+</body>
+
+</html>
