@@ -1,10 +1,12 @@
 <!doctype html>
+{% load staticfiles %}
 <html class="cabs">
 
 <head>
     <meta charset="utf-8">
     <title>Driver</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'admin/css/style.css' %}" rel="stylesheet"/>
     <meta charset="utf-8">
 
 </head>
@@ -17,9 +19,16 @@
     <link rel="shortcut icon" href="https://www39.online-convert.com/">
     <form class="myForm" method="post" action="/postDrivers/">
         {% csrf_token %}
+        <div>
+        <label>
         From
-        <input type="text" name="src_loc1" placeholder="Enter source location" required> To
+        <input type="text" name="src_loc1" placeholder="Enter source location" required>
+        </label>
+        <label>
+         To
         <input type="text" name="des_loc1" placeholder="Enter destination" required>
+        </label>
+        </div>
 
     <p>
         <label>Name
@@ -64,7 +73,7 @@
         <option value="c3">SUV-6 Seater</option>
         <option value="c2">Bolero-8 Seater</option></select>
     </label></p>
-    <p><button type="submit">Submit</button><button><a href="{% url 'driverlist ' %}">Price List</a></button></p>
+    <p><button type="submit">Submit</button><button><a href="{% url 'driverlist' %}">Price List</a></button></p>
     </form>
 </body>
 
